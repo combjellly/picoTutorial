@@ -1,0 +1,25 @@
+Hello! My name is Nick and today I'll be covering a tutorial provided by Picovoice on how to transcribe pre-recorded audio files to text.
+
+For the sake of this tutorial, we'll be using a pre-recorded audio file, but feel free to use any file you'd like. 3gp, FLAC, MP3, MP4/m4a (AAC), Ogg, WAV, and WebM formats are all supporteed. If you are interested in following along please do take a look at the link below to download all the files required for this tutorial.  
+
+Today I'll be using a Mac, but picovoice's libraries are fully cross platform. Everything I do here today should translate well to any operating system you may be using at the moment. 
+
+Before we begin, it is important to make sure that you have python installed on your computer. To test whether or not we have access to python, all we have to do is open up our terminal (or command prompt if we are using Windows), type python3 and hit enter. We should be prompted with our Python interpreter. If this doesnt appear, do make sure you install python3.
+
+In order to get started, we need to install the pvleopard python package using pip. 
+
+While our terminal gets everything set up, let's go to our browser to make an account with picovoice console. This is an important step, as pvleopard requires that we provide it with an AccessKey to authenticate our API. Be sure to keep this tab open, we'll need it in a few seconds. 
+
+Now that our terminal has finished installing the package, we can begin coding. Go ahead and open up your favorite IDE (you can also use notepad). First thing we'll have to do is import pvleopard... like so. Next we'll need to declare and define 2 new variables. The first one will be our acces key, you can paste the access key from the console here, be sure to wrap it in quotation marks so that python knows it's a string. The second variable we'll need to declare and define is our audio file. Because we'll be running this script in the same folder as our audio file, we don't need to be super precise about it's path, just it's full name should do. 
+
+Next, we can go ahead and create an instance of picovoice's API runtime, this can be done by simple declaring a new variable called leopard, and associating a function from the pvleopard library to it called create. be sure to feed it the access_code we defined earlier. 
+
+Next we'll need some place to store our transcribed string of text so we'll make a new variable called transcript and associate another function called "process_file" to it using our previously made instance. Here we will be using the audio path as our argument.
+
+Finally, we just need to print it. we can do so by printing transcript. Here i'm going to print out only the first index of transcript. If you wanted to have accompanying metadata with you transcript you could remove the square bracked and 0 to print everything that leopard provides. Let's go ahead and save this file into the same directory as our audio file. 
+
+	Now to run it, we'll head back to our terminal and change directories to the location we just saved to. We can do so by using the shell command "cd" then input the path of our chosen directory. On mac you can just drag and drop, on windows you can hold shift and left click your mouse to copy the file path. Be sure to remove any quotation marks that windows throws in there. 
+
+Then we can hit enter on our keyboard and proceed to running our script using python. lets go ahead and type python3 and the name of our script, and hit enter. If all goes well we should have a written transcript of our audio file.
+
+If you require any further help do feel free to take a look at the documentation provided in the link below. It's always good to remember that video tutorials may fall out of date and so it's important to make sure that if you are encountering any issues at all, to make sure you are running the same version of the library seen in the video. 
